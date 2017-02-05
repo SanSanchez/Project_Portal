@@ -1,0 +1,16 @@
+1. Login to linprog or ww3.
+2. Use the command sent by systems email and you should be promted to enter a password.
+3. Enter password sent by systems email.
+4. Type 'show databases' to see which databases you have access to.
+5. You should see:
+    information schema
+    halfakerdb
+    (yourlastname)db
+    
+6. Type 'use (database name)' to move to a differnt database, in our case 'use halfakerdb'.
+7. Type 'show tables' to view the tables.
+8. You should see four tables for now:
+    user
+	  project
+	  user_projects
+	  company
