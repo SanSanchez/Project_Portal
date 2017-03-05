@@ -31,7 +31,7 @@ if($uname != $confirm)
 }
 else
 {
-    $c->query("INSERT INTO users(first_name,last_name,email,password,phone)
+    $c->query("INSERT INTO user(first_name,last_name,email,password,phone)
         VAULES($fname,$lname,$email,$pass,$phone)")
 }
 
