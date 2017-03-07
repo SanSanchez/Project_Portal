@@ -1,0 +1,158 @@
+/*!
+ * Copyright 2013-2016 Project Portal
+ */
+body {
+  font-family: 'Lato', georgia;
+  font-size: 14px;
+  color: rgb(128, 128, 128);
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+
+#contact-form {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+label {
+  font-weight: 400;
+  cursor: pointer;
+}
+
+textarea,input {
+  border: none;
+  outline: none;
+  border-radius: 0;
+  text-align: center;
+  background: rgb(225, 223, 219);
+  font-weight: 100;
+  font-family: 'Lato', georgia;
+  font-size: 16px;
+  color: rgb(255, 106, 0);
+  max-width: 90%;
+  padding: 1rem;
+  border: 1px dashed rgb(255, 106, 0);
+  box-sizing: border-box;
+  cursor: text;
+}
+
+textarea {
+  text-align: left;
+  /* overflow:hidden; */
+  
+  resize: none;
+  width: 90%;
+  border-color: rgb(255, 106, 0);
+}
+
+textarea:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px dashed rgb(255, 106, 0);
+}
+
+textarea:focus:required:valid {
+  border: 2px dashed rgb(255, 106, 0);
+  border-bottom: 2px dashed rgb(255, 106, 0);
+}
+
+textarea:required:valid {
+  border-bottom: 2px dashed rgb(255, 106, 0);
+}
+
+input {
+  border-bottom: 2px dashed rgb(255, 106, 0);
+}
+
+input:required,
+textarea:required {
+  border-bottom: 2px dashed rgb(255, 106, 0);
+}
+
+input:focus {
+  border-bottom: 2px dashed rgb(255, 106, 0);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+input:required:valid {
+  border-bottom: 2px dashed rgb(255, 106, 0);
+}
+
+input:required:invalid {
+  color: rgb(255, 106, 0);
+}
+
+::-webkit-input-placeholder {
+  text-align: center;
+  color: rgb(255, 106, 0);
+  font-style: italic;
+  font-weight: 100;
+}
+
+:-moz-placeholder {
+  text-align: center;
+  color: rgb(255, 106, 0);
+  font-style: italic;
+  font-weight: 200;
+}
+
+::-moz-placeholder {
+  text-align: center;
+  color: rgb(255, 106, 0);
+  font-style: italic;
+  font-weight: 200;
+}
+
+:-ms-input-placeholder {
+  text-align: center;
+  color: rgb(255, 106, 0);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.expanding {
+  vertical-align: top;
+}
+
+.send-icn {
+  fill: rgb(255, 106, 0)
+}
+
+.send-icn:hover {
+  fill: rgb(255, 106, 0);
+  cursor: pointer;
+}
+
+button {
+  background: none;
+  border: rgb(255, 106, 0);
+  outline: none;
+  margin: 2vmax;
+  
+}
+
+button small {
+  opacity: 1;
+  color: rgb(255, 106, 0);
+}
+
+small {
+  display: block;
+  opacity: 0;
+}
+
+.website {
+  opacity: 1;
+  font-size: 16px;
+  color: white;
+  position: relative;
+  text-align: center;
+  display: block;
+  margin-top: 7%;
+  
+}
+
+.website a {
+  color: white;
+}
