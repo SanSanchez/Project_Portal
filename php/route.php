@@ -48,7 +48,7 @@
 			if($data["total"] == 1)
 			{
 				$_SESSION['result'] = $data;
-				header("Location: ../php/Company_Profile.php");
+				header("Location: ../php/html/Company_Profile.php");
 	    		exit;
 			}
 			echo "Username or Password incorrect";
