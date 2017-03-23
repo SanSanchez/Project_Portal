@@ -1,5 +1,5 @@
- <?php 
- 
+<?php
+
 $servername = "dbsrv2.cs.fsu.edu"; 
 $username = "syed"; 
 $password = "wpKe*A95XT"; 
@@ -9,31 +9,45 @@ $c = new mysqli($servername, $username, $password, $database);
   
 if($c->connect_error) 
 { 
-    die("Connection failed " . $c->connect_error); 
+	echo "Connection failed" . $c->connect_error; 
 } 
 else 
 { 
-    echo ("Connected"); 
+	echo "Connected";
 } 
 
-$email = POST["Email"]
-$uname = POST["Uname"] 
-$pass = POST["pass"]
-$confirm = POST["cpass"]
-$fname = POST["fname"]
-$lname = POST["lname"]
-$phone = POST["phone"]
-$addr = POST["address"]
+$email = $_POST["Email"];
+$uname = $_POST["Uname"];
+$pass = $_POST["pass"];
+$confirm = $_POST["cpass"];
+$fname = $_POST["fname"];
+$lname = $_POST["lname"];
+$phone = $_POST["phone"];
+$addr = $_POST["address"];
+$rows = $c->query("SELECT COUNT(email) FROM user WHERE '$email' = email");
 
-if($uname != $confirm)
+//confirm the passwords
+if(strcmp($pass,$confirm) !== 0)
 {
-    echo("ERROR: Passwords do not match\n")
+	echo "ERROR: Passwords do not match\n";
 }
+
+//prevents duplicate users
+elseif($rows > 0)
+{
+	echo "ERROR: This email has already been used\n";
+}
+
 else
 {
-    $c->query("INSERT INTO user(first_name,last_name,email,password,phone)
-        VAULES($fname,$lname,$email,$pass,$phone)")
+	if($c->query("INSERT INTO user(first_name, last_name, email, password, phone)VALUES ('$fname', '$lname', '$email', '$pass', '$phone')"))
+	{
+		echo "Thank you ". $fname . " your account has been created\n";
+	}
+	else
+	{
+		echo "An error occured creating ". $fname . "'s account\n";
+	}
 }
 
 ?>
-
