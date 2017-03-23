@@ -5,6 +5,7 @@
 		Message: <?php echo $_POST["your-message"]; ?>
 	</body>
 </html>
+<<<<<<< HEAD
 
 <?php
 
@@ -25,3 +26,5 @@ else
 }
 
 ?>
+=======
+>>>>>>> 446b1f32880a928f68121e1ce8cfe0f7effb5ee2
