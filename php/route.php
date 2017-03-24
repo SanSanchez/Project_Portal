@@ -1,17 +1,18 @@
 <?php
 	session_start();
+/*
 	$servername = "dbsrv2.cs.fsu.edu"; 
 	$username = "syed"; 
 	$password = "wpKe*A95XT"; 
 	$database = "halfakerdb"; 
 	$c = new mysqli($servername, $username, $password, $database);
-/*
+*/
 	$username = 'root';
 	$password = '';
 	$dbname = 'ProjectPortal';
 	$host = 'localhost';
 	$c = new mysqli($host, $username, $password, $dbname);
- */
+
 	
 	if($c->connect_error)
 	{
@@ -38,7 +39,7 @@
 			}
 			echo "Username or Password incorrect";
 		}
-		elseif($user_type == "business")
+		else if($user_type == "business")
 		{
 			$user_exists = $c->query("SELECT *, COUNT(*) AS total FROM Company WHERE '$email' = email AND '$password' = password");
 			
@@ -53,10 +54,6 @@
 			}
 			echo "Username or Password incorrect";
 		}
-        else
-        {
-            echo "ERROR";
-        }
 	}
 
 
