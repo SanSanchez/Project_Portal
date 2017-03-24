@@ -38,7 +38,7 @@
 			}
 			echo "Username or Password incorrect";
 		}
-		else if($user_type == "business")
+		elseif($user_type == "business")
 		{
 			$user_exists = $c->query("SELECT *, COUNT(*) AS total FROM Company WHERE '$email' = email AND '$password' = password");
 			
@@ -53,6 +53,10 @@
 			}
 			echo "Username or Password incorrect";
 		}
+        else
+        {
+            echo "ERROR";
+        }
 	}
 
 
