@@ -34,7 +34,7 @@
 			if($data["total"] == 1)
 			{
 				$_SESSIONS['result'] = $data;
-				header("Location: ../html/Student_Profile.html");
+				header("Location: ../php/html/Student_Profile.html");
 	    		exit;
 			}
 			echo "Username or Password incorrect";
