@@ -3,9 +3,8 @@ var current_fs, next_fs, previous_fs; //fieldsets
 var left, opacity, scale; //fieldset properties which we will animate
 var animating; //flag to prevent quick multi-click glitches
 
-$("next").function()
-{
-	//if(animating) return false;
+$("next").click(function(){
+	if(animating){return false}
 	animating = true;
 	
 	current_fs = $(this).parent();
@@ -40,7 +39,7 @@ $("next").function()
 		//this comes from the custom easing plugin
 		easing: 'easeInOutBack'
 	});
-}
+});
 
 $(".previous").click(function(){
 	if(animating) return false;
@@ -79,4 +78,4 @@ $(".previous").click(function(){
 
 $(".submit").click(function(){
 	return false;
-})
+});
