@@ -18,6 +18,7 @@
 	{
 		die("Connection failed " . $c->connect_error);
 	}
+
 	else
 	{
 		$email = $_POST["email"];
@@ -37,7 +38,13 @@
 				header("Location: ../php/html/Student_Profile.html");
 	    		exit;
 			}
-			echo "Username or Password incorrect";
+			else if(isset($_POST["newacct"]))
+			{
+				header("Location: ../html/Student_regForm.html");
+				exit;
+			}
+			else
+				echo "Username or Password incorrect";
 		}
 		else if($user_type == "business")
 		{
@@ -52,8 +59,15 @@
 				header("Location: ../php/html/Company_Profile.php");
 	    		exit;
 			}
-			echo "Username or Password incorrect";
+			else if(isset($_POST["newacct"]))
+			{
+				header("Location: ../html/Company_regForm.html");
+				exit;
+			}
+			else
+				echo "here: Username or Password incorrect";
 		}
+		
 	}
 
 
