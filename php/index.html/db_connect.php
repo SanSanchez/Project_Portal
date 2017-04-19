@@ -1,12 +1,3 @@
-<html>
-	<body>
-		Name: <?php echo $_POST["your-name"]; ?>
-		Email: <?php echo $_POST["your-email"]; ?>
-		Message: <?php echo $_POST["your-message"]; ?>
-	</body>
-</html>
-<<<<<<< HEAD
-
 <?php
 
 $servername = "dbsrv2.cs.fsu.edu";
@@ -26,5 +17,3 @@ else
 }
 
 ?>
-=======
->>>>>>> 446b1f32880a928f68121e1ce8cfe0f7effb5ee2
