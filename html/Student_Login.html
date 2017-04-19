@@ -1,8 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="../css/Main_Login.css">
   </head>
   <body>
+    <form action="" id="Stu_Credentials" method="post">
+      <fieldset><legend>Login</legend>
+        <label class="sub_label">Username<br />
+            <input type="text" name="Stu_Uname"
+                   placeholder="JDoe123" required="required"/></label><br />
+        <a href="">Forgot Username?</a><br />
+        <label class="sub_label">Password<br />
+            <input type="text" name ="Stu_Pword"
+                   placeholder="************" required="required"/></label><br />
+        <a href="">Forgot Password?</a><br />
+        <input type="button" name="Submit" class="submit_action_button" value="Submit" />
+      </fieldset>
+
     <H1>Student Login</H1>
     <fieldset>
     <form id="Stu_Credentials" method="post" action="../php/html/Student_Login.php">
@@ -12,6 +27,7 @@
       <input type="text" name ="Stu_Pword" placeholder="************" />
       <input type="submit" name="Submit" class="submit_action_button" value="Submit" />
     </fieldset>
+
     </form>
   </body>
 </html>
