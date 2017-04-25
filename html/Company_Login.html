@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
+      <link rel="stylesheet" href="/css/login.css">
   </head>
   <body>
     <H1>Company Login</H1>
-    <form id="Co_Credentials">
-      <label class="sub_label" for="Co_Uname">Username</label>
-      <input type="text" name="Uname" placeholder="JDoe123" />
-      <!-- should this be enforced here or only in the registration page?-->
-      <label class="sub_label" for="CoID">Company ID</label>
-      <input type="text" name="CoID" placeholder="abc123" />
-      <label class="sub_label" for="Co_Pword">Password</label>
-      <input type="text" name ="Pword" placeholder="************" />
-      <input type="button" name="Submit" class="submit_action_button" value="Submit" />
+    <form action="" id="Co_Credentials" method="post">
+        <fieldset><legend>Login Info</legend>
+          <label class="sub_label">Username<br />
+              <input type="text" name="Uname"
+                     placeholder="JDoe123" required="required"/></label><br />
+          <label class="sub_label">Password<br />
+              <input type="text" name ="Pword"
+                     placeholder="************" required="required"/></label><br />
+          <input type="button" name="Submit" class="submit_action_button" value="Submit" />
+        </fieldset>
     </form>
   </body>
 </html>

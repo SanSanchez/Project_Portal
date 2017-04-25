@@ -27,6 +27,7 @@
 
 		if($user_type == "student")
 		{
+
 			$user_exists = $c->query("SELECT *, COUNT(*) AS total FROM Student WHERE '$email' = email AND '$password' = password");
 			
 				$data = $user_exists->fetch_array(MYSQLI_ASSOC);
