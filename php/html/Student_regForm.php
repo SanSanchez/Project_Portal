@@ -1,9 +1,10 @@
 <?php
-/*
-$servername = "dbsrv2.cs.fsu.edu"; 
-$username = "syed"; 
-$password = "wpKe*A95XT"; 
-$database = "halfakerdb"; 
+
+$username = 'root';
+$password = '';
+$dbname = 'ProjectPortal';
+$host = 'localhost';
+
 
 $c = new mysqli($servername, $username, $password, $database); 
 */ 
