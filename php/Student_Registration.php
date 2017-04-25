@@ -1,5 +1,5 @@
 <?php
-/*$servername = "dbsrv2.cs.fsu.edu";
+$servername = "dbsrv2.cs.fsu.edu";
 $username = "syed";
 $password = "wpKe*A95XT";
 $database = "halfakerdb";
@@ -11,7 +11,7 @@ if($c->connect_error)
 else
 {
 	echo ("Connected");
-}*/
+}
 
 // Get User Info
 
@@ -28,6 +28,36 @@ $user_address = $_POST["address"];
 echo $user_email . " ". $user_username . " " . $user_pass . " " . $user_firstname . " ". $user_lastname;
 
 
+//Verify Password
 
+if($user_pass != $user_confirm_pass)
+{
+    echo("ERROR: Passwords do not match\n");
+}
+
+$rows = $c->query("SELECT COUNT(email) FROM user WHERE $user_email = email");
+
+//Make sure user doesn't already exist
+
+if($rows > 0)
+{
+	echo("ERROR: user already registered\n");
+}
+
+else
+{
+
+    if($c->query("INSERT INTO Company(password, firstname, lastname, email, phone)
+        VALUES ('$user_pass', '$user_firstname', '$user_lastname', '$user_email', '$user_phone')"))
+    {
+        echo "Successfull entered ". $user_firstname . " into DB!\n";
+    }
+    else
+    {
+        echo "Failed to insert ". $user_firstname . " into DB\n";
+    }
+}
+
+//Need to direct user to next page, wherever we decide that is //
 
 ?>
