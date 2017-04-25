@@ -46,6 +46,7 @@
 			}
 			else
 			{
+
 				header("Location: ../html/studentsignup.html");
 				
 				exit;
@@ -78,9 +79,7 @@
 				
 				exit;
 			}
-			}
-		
+
+		}
 	}
-
-
 ?>
