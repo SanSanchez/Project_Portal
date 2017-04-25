@@ -47,7 +47,7 @@
 			else
 			{
 				echo "<script type='text/javascript'>alert('Incorrect Username or Password');</script>";
-				header("Location: ../html/signup.html");
+				header("Location: ../html/studentsignup.html");
 					exit;
 
 			}
@@ -72,8 +72,11 @@
 				header("Location: ../html/Company_regForm.html");
 				exit;
 			}
-			else
-				echo "here: Username or Password incorrect";
+			else{
+				header("Location: ../html/companysignup.html");
+					exit;
+			}
+				
 		}
 		
 	}
