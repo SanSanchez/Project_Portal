@@ -23,7 +23,7 @@
 	{
 		$email = $_POST["email"];
 		$password = $_POST["password"];
-		$user_type = $_POST["user_type"];
+		$user_type = $_GET["type"];
 
 		if($user_type == "student")
 		{
@@ -44,7 +44,14 @@
 				exit;
 			}
 			else
-				echo "Username or Password incorrect";
+			{
+				echo "<script type='text/javascript'>alert('Incorrect Username or Password');</script>";
+				header("Location: ../html/signup.html");
+					exit;
+
+			}
+				
+
 		}
 		else if($user_type == "business")
 		{
