@@ -27,6 +27,8 @@
 
 		if($user_type == "student")
 		{
+            echo "Student Selected";
+
 			$user_exists = $c->query("SELECT *, COUNT(*) AS total FROM Student WHERE '$email' = email AND '$password' = password");
 			
 				$data = $user_exists->fetch_array(MYSQLI_ASSOC);
@@ -34,6 +36,7 @@
 
 			if($data["total"] == 1)
 			{
+                echo "Student found"
 				$_SESSIONS['result'] = $data;
 				header("Location: ../php/html/Student_Profile.html");
 	    		exit;
