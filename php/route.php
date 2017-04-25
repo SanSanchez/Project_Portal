@@ -1,18 +1,18 @@
 <?php
 	session_start();
-
+/*
 	$servername = "dbsrv2.cs.fsu.edu"; 
 	$username = "syed"; 
 	$password = "wpKe*A95XT"; 
 	$database = "halfakerdb"; 
 	$c = new mysqli($servername, $username, $password, $database);
-/*
+*/
 	$username = 'root';
 	$password = '';
 	$dbname = 'ProjectPortal';
 	$host = 'localhost';
 	$c = new mysqli($host, $username, $password, $dbname);
- */
+
 	
 	if($c->connect_error)
 	{
@@ -27,7 +27,6 @@
 
 		if($user_type == "student")
 		{
-            echo "Student Selected";
 
 			$user_exists = $c->query("SELECT *, COUNT(*) AS total FROM Student WHERE '$email' = email AND '$password' = password");
 			
@@ -36,7 +35,6 @@
 
 			if($data["total"] == 1)
 			{
-                echo "Student found"
 				$_SESSIONS['result'] = $data;
 				header("Location: ../php/html/Student_Profile.html");
 	    		exit;
