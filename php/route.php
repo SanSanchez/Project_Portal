@@ -36,7 +36,7 @@
 			if($data["total"] == 1)
 			{
 				$_SESSIONS['result'] = $data;
-				header("Location: ../php/html/Student_Profile.html");
+				header("Location: ../php/html/Student_Prof.html");
 	    		exit;
 			}
 			else if(isset($_POST["newacct"]))
@@ -46,9 +46,9 @@
 			}
 			else
 			{
-				echo "<script type='text/javascript'>alert('Incorrect Username or Password');</script>";
-				header("Location: ../html/signup.html");
-					exit;
+				header("Location: ../html/studentsignup.html");
+				
+				exit;
 
 			}
 				
@@ -64,7 +64,7 @@
 			if($data["total"] == 1)
 			{
 				$_SESSION['result'] = $data;
-				header("Location: ../php/html/Company_Profile.php");
+				header("Location: ../php/html/Company_Prof.php");
 	    		exit;
 			}
 			else if(isset($_POST["newacct"]))
@@ -73,8 +73,12 @@
 				exit;
 			}
 			else
-				echo "here: Username or Password incorrect";
-		}
+			{
+				header("Location: ../html/companysignup.html");
+				
+				exit;
+			}
+			}
 		
 	}
 
