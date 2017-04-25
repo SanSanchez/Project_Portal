@@ -1,12 +1,20 @@
 <?php
-
+/*
 $servername = "dbsrv2.cs.fsu.edu"; 
 $username = "syed"; 
 $password = "wpKe*A95XT"; 
 $database = "halfakerdb"; 
 
 $c = new mysqli($servername, $username, $password, $database); 
-  
+*/ 
+
+$username = 'root';
+$password = '';
+$dbname = 'ProjectPortal';
+$host = 'localhost';
+$c = new mysqli($host, $username, $password, $dbname);
+
+
 if($c->connect_error) 
 { 
 	echo "Connection failed" . $c->connect_error; 
