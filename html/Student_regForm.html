@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="../css/Student_stylesheet.css">
+        <link rel="stylesheet" href="../css/Student_Reg.css">
         <title> Registration </title>
     </head>
     <body>
@@ -9,39 +9,39 @@
     <script src="../js/Student_Script1.js"></script>
         <!-- multistep form -->
 
-        <form action="" id="msform">
+        <!--<form action="" id="msform">-->
         <form id="msform" method="post" action="Project_Portal/php/html/Student_regForm.php">
 
     <!-- progressbar -->
-         <ul id="progressbar">
-            <li class="active">Account Setup</li>
-            <li>Personal Details</li>
-        </ul>
+         <!--<ul id="progressbar">-->
+            <!--<li class="active">Account Setup</li>-->
+            <!--<li>Personal Details</li>-->
+        <!--</ul>-->
   <!-- fieldsets -->
            <fieldset>
                 <h2 class="fs-title">Create your account</h2>
                               <!--Placeholder-->
                 <h3 class="fs-subtitle">This is step 1</h3>
                 <label for="Email">Email</label>
-                <input type="text" name="Email" placeholder="user@example.com" />
+                <input id = "Email" type="text" name="Email" placeholder="user@example.com" />
                 <label>Username
                 <input type="text" name="Uname" placeholder="JDoe123" /></label>
-                <label for="pass">Password</label>
-                <input type="password" name="pass" placeholder="************" />
+                <label for="passwd">Password</label>
+                <input id="passwd" type="password" name="pass" placeholder="************" />
                 <input type="password" name="cpass" placeholder="Confirm Password" />
                 <input type="button" onclick="" name="next" class="next action-button" value="next" />
             </fieldset>
 
             <fieldset>
                 <h2 class="fs-title">Personal Details</h2>
-                <label for="fname">First Name</label>
-                <input type="text" name="fname" placeholder="John" />
-                <label for="lname">Last Name</label>
-                <input type="text" name="lname" placeholder="Doe" />
-                <label for="phone">Phone</label>
-                <input type="text" name="phone" placeholder="555-555-5555" />
+                <label for="F_name">First Name</label>
+                <input id="F_name" type="text" name="fname" placeholder="John" />
+                <label for="L_name">Last Name</label>
+                <input id="L_name" type="text" name="lname" placeholder="Doe" />
+                <label for="phoneNO">Phone</label>
+                <input id="phoneNO" type="text" name="phone" placeholder="555-555-5555" />
                 <label for="address">Address</label>
-                <textarea name="address" placeholder="1600 Pennsylvania Ave NW, Washington, DC 20500"></textarea>
+                <textarea id="address" name="address" placeholder="1600 Pennsylvania Ave NW, Washington, DC 20500"></textarea>
                 <input type="button" name="previous" class="previous action-button" value="Previous" />
                 <input type="submit" name="submit" class="submit action-button" value="Submit" />
             </fieldset>
