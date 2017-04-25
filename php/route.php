@@ -36,7 +36,7 @@
 			if($data["total"] == 1)
 			{
 				$_SESSIONS['result'] = $data;
-				header("Location: ../php/html/Student_Prof.html");
+				header("Location: ../../ProjectPortal/html/Student_Prof.php");
 	    		exit;
 			}
 			else if(isset($_POST["newacct"]))

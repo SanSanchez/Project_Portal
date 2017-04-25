@@ -1,3 +1,22 @@
+<?php
+    session_start();
+    $username = 'root';
+    $password = '';
+    $dbname = 'ProjectPortal';
+    $host = 'localhost';
+    $c = new mysqli($host, $username, $password, $dbname);
+    
+    if(isset($_SESSION["result"]))
+    {
+        echo "here";
+        $result = $c->query("SELECT * FROM Student WHERE '$id' = id ");
+    }
+
+    
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 <title>Student Profile</title>
@@ -24,7 +43,7 @@
                 <div class="w3-display-container">
                     <!--<img src="" style="width:100%" alt="Avatar">-->
                     <div class="w3-display-bottomleft w3-container w3-text-black">
-                        <h2>Jane Doe</h2>
+                        <h2><?php echo $user["fname"]. " ". $user["lname"]?></h2>
                     </div>
                 </div>
                 <div class="w3-container">

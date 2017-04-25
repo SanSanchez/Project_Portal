@@ -1,19 +1,12 @@
 <?php
-
+session_start();
 $username = 'root';
 $password = '';
 $dbname = 'ProjectPortal';
 $host = 'localhost';
 
 
-$c = new mysqli($servername, $username, $password, $database); 
-*/ 
-
-$username = 'root';
-$password = '';
-$dbname = 'ProjectPortal';
-$host = 'localhost';
-$c = new mysqli($host, $username, $password, $dbname);
+$c = new mysqli($host, $username, $password, $dbname); 
 
 
 if($c->connect_error) 
@@ -33,7 +26,7 @@ $fname = $_POST["fname"];
 $lname = $_POST["lname"];
 $phone = $_POST["phone"];
 $addr = $_POST["address"];
-$rows = $c->query("SELECT COUNT(email) FROM user WHERE '$email' = email");
+$rows = $c->query("SELECT COUNT(email) FROM Student WHERE '$email' = email");
 
 //confirm the passwords
 if(strcmp($pass,$confirm) !== 0)
@@ -49,9 +42,10 @@ elseif($rows > 0)
 
 else
 {
-	if($c->query("INSERT INTO user(first_name, last_name, email, password, phone)VALUES ('$fname', '$lname', '$email', '$pass', '$phone')"))
+	if($c->query("INSERT INTO Student(fname, email, password, lname,  phone)VALUES ('$fname', '$email','$pass','$lname', '$phone')"))
 	{
-		echo "Thank you ". $fname . " your account has been created\n";
+		$SESSION["id"] = $c->query("SELECT id FROM Student WHERE '$email' = email");;
+		header("Location: ../../html/Student_Prof.php");
 	}
 	else
 	{
