@@ -24,13 +24,15 @@
           $projectRow = "No projects";
           echo $set;
         }
+        /*
         else
         {
           $set = 1;
           //$projectRow = mysql_fetch_row($projectResult);
-          $sql = "SELECT name FROM Student WHERE id = '$projectRow[1]'";
+          $sql = "SELECT name FROM Student WHERE id = '$projectResult[1]'";
           $companyRow = mysql_query($sql);
         }
+        */
     }
 ?>
 
@@ -45,6 +47,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/button.css" >
     <style>
         html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
         a {color: blue;}
@@ -82,7 +85,8 @@
                         <p style="text-align:justify" ><?php echo $row[5] ?></p>
                     </div>
                     <p>Company Website</p>
-                    <?php echo "<a href=https://www.google.com/#q=". $row[4] .">"; echo $row[4] ?> </a>
+                    <?php echo "<a href=https://www.google.com/#q= $row[4] > $row[4] </a>";
+                    echo "<a href=\"project_creation.php?id=$id\"class=\"button\"><span>✓</span>Create Project</a>" ?>
                     <hr>
                     <br>
                 </div>
@@ -92,31 +96,37 @@
         </div>
 
         <!-- Right Column -->
-        <div class="w3-twothird">
 
-            <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
-                <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Current Available Projects</h2>
-                <?php while($row = mysql_fetch_array($projectResult))
-                      {
+          <div class="w3-twothird">
 
+           <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
+            <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Current Available Projects</h2>
 
-                        <div class="w3-container">
+          <?php while($row = mysql_fetch_array($projectResult))
+          {
 
-                        echo "<h5 class=\"w3-opacity\"><b>$row["name"]</b></h5>";
-                        echo "<h6 class=\"w3-text-teal\">$row["description"]<i class=\"fa fa-calendar fa-fw w3-margin-right\"></i>Start Date <span class=\"w3-tag w3-teal w3-round"></span></h6>
-                        <h5 class="w3-opacity" id="DescriptionHeader"><b>Description</b></h5>
-                        <p id="Description"></p>
-                        <h5 class="w3-opacity" id="ParticipantsHeader"><b>Participants</b></h5>
-                        <ul>
-                          <li><a href="">Little_Johny</a></li>
-                          </ul>
-                          <hr>
-                          </div>
-                          </div>
-                        }
+  //            echo "<div class=\"w3-container w3-card-2 w3-white w3-margin-bottom\">";
+                        $name = $row["name"];
+                        $description = $row["description"];
+                        $date = $row["start_date"];
+                        echo "<div class=\"w3-container\">";
 
+                        echo "<h5 class=\"w3-opacity\"><b>$name</b></h5>";
+                        echo "<h6 class=\"w3-text-teal\"><i class=\"fa fa-calendar fa-fw w3-margin-right\"></i>$date<span class=\"w3-tag w3-teal w3-round\"></span></h6>";
+                        echo "<h5 class=\"w3-opacity\" id=\"DescriptionHeader\"><b>Description</b></h5>";
+                        echo "<p id=\"Description\">$description</p>";
+                        echo "</ul>";
+                        echo "<hr>";
+                        echo "</div>";
+                        //echo "</div>";
+                      //  echo "</div>";
+                      }
+
+                ?>
+              </div>
+                </div>
             <!-- End Right Column -->
-        </div>
+
 
         <!-- End Grid -->
     </div>

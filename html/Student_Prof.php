@@ -4,9 +4,9 @@
     $password = '';
     $dbname = 'ProjectPortal';
     $host = 'localhost';
-    $conn = mysql_connect($host, $username, $password); 
+    $conn = mysql_connect($host, $username, $password);
      mysql_select_db($dbname, $conn);
-    
+
     if(isset($_SESSION['id']))
     {
         $id = $_SESSION['id'];
@@ -29,11 +29,11 @@
         {
             $set = 1;
             $companyResult = mysql_query($sql);
-           
+
         }
     }
 
-    
+
 
 
 ?>
@@ -65,19 +65,19 @@
                 <div class="w3-display-container">
                     <!--<img src="" style="width:100%" alt="Avatar">-->
                     <div class="w3-display-bottomleft w3-container w3-text-black">
-                        
+
                     </div>
                 </div>
                 <div class="w3-container">
                     <h1><i class="fa-fw w3-margin-right w3-large w3-text-teal"></i><?php echo $row[0] . " " . $row[3];?></h1>
                     <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i><?php echo $row[10]?></p>
                     <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i><?php echo $row[17]?></p>
-                    
-                    <?php 
+
+                    <?php
                     $emailAddr = $row[1];
                     ?>
                     <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i><a href="mailto:<?php echo $emailAddr ?>"><?php echo $emailAddr ?></a></p>
-                    
+
                     <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i><?php echo $row[4]?></p>
                     <hr>
 
@@ -126,13 +126,13 @@
                 <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-trophy fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Projects</h2>
                 <?php
                     $count = 0;
-                    
+
                     while($row = mysql_fetch_array($projectResult))
                     {
                         $companyRow = mysql_fetch_array($companyResult);
                         echo "<div class=\"w3-container\">";
-                        
-                        if($set == 1) 
+
+                        if($set == 1)
                         {
                             $compID = $row['company_id'];
                             $sql = "SELECT name FROM Company WHERE id = '$compID'";
@@ -141,14 +141,14 @@
                             $name = $compRow['name'];
                             $projName = $row['name'];
                             $desc = $row['description'];
-                        } 
+                        }
                         else
                         {
                             $name = $projectRow;
                             $projName = $projectRow;
                             $desc =$projectRow;
                         }
-                        
+
                         echo "<h5 class=\"w3-opacity\"><b>$projName</b></h5>";
                         echo "<p>$name</p>";
                         echo "<p>$desc</p>";
@@ -156,7 +156,7 @@
                         echo "</div>";
                     }
                 ?>
-                
+
             </div>
 
 
