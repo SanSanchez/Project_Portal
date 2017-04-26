@@ -17,8 +17,22 @@
         exit;
         }
         $row = mysql_fetch_row($result);
-        $website = $row[4];
-        echo "$website";
+
+        $sql = "SELECT * FROM Projects WHERE '$id' = company_id";
+        $projectResult = mysql_query($sql);
+        if(!$projectResult)
+        {
+          $set = 0;
+          $projectRow = "No projects";
+          echo $set;
+        }
+        else
+        {
+          $set = 1;
+          $projectRow = mysql_fetch_row($projectResult);
+          $sql = "SELECT name FROM Student WHERE id = '$projectRow[1]'";
+          $companyRow = mysql_query($sql);
+        }
     }
 ?>
 

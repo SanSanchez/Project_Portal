@@ -4,7 +4,7 @@ session_start();
     $password = '';
     $dbname = 'ProjectPortal';
     $host = 'localhost';
-    $conn = mysql_connect($host, $username, $password); 
+    $conn = mysql_connect($host, $username, $password);
      mysql_select_db($dbname, $conn);
 
      $sql = "SELECT * FROM Projects";
@@ -14,7 +14,7 @@ session_start();
         echo "FAIL";
      }
      $studentID = $_GET['id'];
-     
+
 
 ?>
 
@@ -45,7 +45,7 @@ session_start();
             }
 
         ?>
-            
+
         </div>
     <!--End List Items-->
     </body>
