@@ -71,7 +71,6 @@
 			else
 			{
 				header("Location: ../html/companysignup.html");
-
 				exit;
 			}
 
