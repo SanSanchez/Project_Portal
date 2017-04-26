@@ -30,7 +30,7 @@
         {
             $set = 1;
             $projectRow =  mysql_fetch_row($projectResult);
-            $sql = "SELECT name FROM Company WHERE id = '$projectRow[2]'"
+            $sql = "SELECT name FROM Company WHERE id = '$projectRow[2]'";
             $companyResult = mysql_query($sql);
 
             if(!$companyResult)
@@ -43,7 +43,7 @@
 
             }
 
-            echo $set;
+           
         }
     }
 
@@ -79,7 +79,7 @@
                 <div class="w3-display-container">
                     <!--<img src="" style="width:100%" alt="Avatar">-->
                     <div class="w3-display-bottomleft w3-container w3-text-black">
-                        <h2><?php echo $row[0] . " " . $row[3];?></h2>
+                        
                     </div>
                 </div>
                 <div class="w3-container">
@@ -133,7 +133,7 @@
                 <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-trophy fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Projects</h2>
                 <div class="w3-container">
                     <h5 class="w3-opacity"><b><?php if($set == 1) {echo $projectRow[3];} else{echo $projectRow;}?></b></h5>
-                    <p><?php if($set == 1) {echo $companyRow[2];} else{echo $projectRow;}?></p>
+                    <p><?php if($set == 1) {echo $companyRow[0];} else{echo $projectRow;}?></p>
                     <p><?php if($set == 1) {echo $projectRow[4];} else{echo $projectRow;}?></p>
                     <hr>
                 </div>
