@@ -1,12 +1,6 @@
 <?php
 	session_start();
-/*
-	$servername = "dbsrv2.cs.fsu.edu"; 
-	$username = "syed"; 
-	$password = "wpKe*A95XT"; 
-	$database = "halfakerdb"; 
-	$c = new mysqli($servername, $username, $password, $database);
-*/
+
 	$username = 'root';
 	$password = '';
 	$dbname = 'ProjectPortal';
@@ -35,7 +29,8 @@
 
 			if($data["total"] == 1)
 			{
-				$_SESSIONS['result'] = $data;
+				$_SESSION['id'] = $data['id'];
+
 				header("Location: ../../ProjectPortal/html/Student_Prof.php");
 	    		exit;
 			}
