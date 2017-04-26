@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../css/Student_Reg.css">
+        <title> Registration </title>
+    </head>
+    <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="../js/Student_Script1.js"></script>
+        <!-- multistep form -->
+
+        <!--<form action="" id="msform">-->
+        <form id="msform" action="../php/company_regform.php" method="post">
+
+    <!-- progressbar -->
+         <!--<ul id="progressbar">-->
+            <!--<li class="active">Account Setup</li>-->
+            <!--<li>Personal Details</li>-->
+        <!--</ul>-->
+  <!-- fieldsets -->
+           <fieldset>
+                <h2 class="fs-title">Create your account</h2>
+                              <!--Placeholder-->
+                <h3 class="fs-subtitle"></h3>
+                <label for="Email">Company Email</label>
+                <input id = "Email" type="text" name="company_email" placeholder="user@example.com" />
+                <label>Company Name
+                <input type="text" name="company_name"/></label>
+                <label for="passwd">Company Password</label>
+                <input id="passwd" type="password" name="company_pass" placeholder="************" />
+                <input type="password" name="cpass" placeholder="Confirm Password" />
+                <label for="website">Website</label>
+                <input id="website" type="text" name="website" placeholder="http://example.com" />
+                <label for="phone">Phone</label>
+                <input id="phone" type="text" name="phone" placeholder="(555) 555-5555" />
+                <label for="mission">Mission</label>
+                <textarea id="mission" type="text" name="mission"> </textarea>
+
+                <input type="submit" name="submit" class="submit action-button" value="Submit" />
+            </fieldset>
+        </form>
+    </body>
+</html>
