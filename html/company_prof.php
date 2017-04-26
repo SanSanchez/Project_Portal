@@ -17,6 +17,8 @@
         exit;
         }
         $row = mysql_fetch_row($result);
+        $website = $row[4];
+        echo "$website";
     }
 ?>
 
@@ -55,20 +57,20 @@
                 </div>
                 <div class="w3-container">
                     <h1><i class="fa-fw w3-margin-right w3-large w3-text-teal"></i><?php echo $row[1] ?></h1>
-                    <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Investment  Company</p>
-                    <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>New York, New York</p>
-                    <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>leopardinvestors@gmail.com</p>
-                    <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>(321)506-5343</p>
+                    <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i><?php echo $row[8] ?></p>
+                    <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i><?php echo $row[6] ?></p>
+                    <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i><?php echo $row[2] ?></p>
+                    <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i><?php echo $row[3] ?></p>
                     <hr>
 
 
                     <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Company Mission</b></p>
                     <hr class="light text-center">
                     <div style="color:#f46242">
-                        <p style="text-align:justify" >	Leopard Investments Inc, Founded in 1894, Ameriprise offers wealth advice and management, annuities and protection and asset management. It is globally active, with offices in the US, Europe and Asia-Pacific. Our main invenstment services forcus on technology and engineering innovations. </p>
+                        <p style="text-align:justify" ><?php echo $row[5] ?></p>
                     </div>
                     <p>Company Website</p>
-                    <a href="https://www.google.com"> www.leopardinvestors.com </a>
+                    <?php echo "<a href=https://www.google.com/#q=". $row[4] .">"; echo $row[4] ?> </a>
                     <hr>
                     <br>
                 </div>
