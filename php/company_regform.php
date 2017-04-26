@@ -40,7 +40,7 @@ elseif(count($row) > 1)
 
 else
 {
-	$sql = "INSERT INTO Company(password, name, email, phone, website,  mission, project_name, project_descripion) VALUES ('$pass', '$name','$email','$phone', '$website', '$mission', '$project_name', '$project_descripion')";
+	$sql = "INSERT INTO Company(password, name, email, phone, website,  mission) VALUES ('$pass', '$name','$email','$phone', '$website', '$mission')";
 	$result = mysql_query($sql);
 	if(!$result)
 	{
