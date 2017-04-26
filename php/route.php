@@ -50,7 +50,7 @@
 
 
 		}
-		else if($user_type == "business")
+		else if($user_type == "company")
 		{
 			$user_exists = $c->query("SELECT *, COUNT(*) AS total FROM Company WHERE '$email' = email AND '$password' = password");
 
