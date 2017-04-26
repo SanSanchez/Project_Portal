@@ -27,7 +27,7 @@
         else
         {
           $set = 1;
-          $projectRow = mysql_fetch_row($projectResult);
+          //$projectRow = mysql_fetch_row($projectResult);
           $sql = "SELECT name FROM Student WHERE id = '$projectRow[1]'";
           $companyRow = mysql_query($sql);
         }
@@ -96,18 +96,24 @@
 
             <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
                 <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Current Available Projects</h2>
-                <div class="w3-container">
-                    <h5 class="w3-opacity"><b>Project Title</b></h5>
-                    <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Start Date <span class="w3-tag w3-teal w3-round"></span></h6>
-                    <h5 class="w3-opacity" id="DescriptionHeader"><b>Description</b></h5>
-                    <p id="Description"></p>
-                    <h5 class="w3-opacity" id="ParticipantsHeader"><b>Participants</b></h5>
-                    <ul>
-                        <li><a href="">Little_Johny</a></li>
-                    </ul>
-                    <hr>
-                </div>
-            </div>
+                <?php while($row = mysql_fetch_array($projectResult))
+                      {
+
+
+                        <div class="w3-container">
+
+                        echo "<h5 class=\"w3-opacity\"><b>$row["name"]</b></h5>";
+                        echo "<h6 class=\"w3-text-teal\">$row["description"]<i class=\"fa fa-calendar fa-fw w3-margin-right\"></i>Start Date <span class=\"w3-tag w3-teal w3-round"></span></h6>
+                        <h5 class="w3-opacity" id="DescriptionHeader"><b>Description</b></h5>
+                        <p id="Description"></p>
+                        <h5 class="w3-opacity" id="ParticipantsHeader"><b>Participants</b></h5>
+                        <ul>
+                          <li><a href="">Little_Johny</a></li>
+                          </ul>
+                          <hr>
+                          </div>
+                          </div>
+                        }
 
             <!-- End Right Column -->
         </div>
