@@ -59,7 +59,7 @@
 				echo $data['total'];
 			if($data["total"] == 1)
 			{
-				$_SESSION['result'] = $data;
+				$_SESSION['id'] = $data['id'];
 				header("Location: ../html/company_prof.php");
 	    		exit;
 			}

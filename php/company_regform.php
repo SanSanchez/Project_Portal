@@ -21,6 +21,8 @@ $confirm = $_POST["cpass"];
 $website = $_POST["website"];
 $phone = $_POST["phone"];
 $mission = $_POST["mission"];
+$address = $_POST["address"];
+$industry = $_POST["industry"];
 
 $sql = "SELECT COUNT(email) FROM Company WHERE '$email' = email";
 $result = mysql_query($sql);
@@ -40,7 +42,7 @@ elseif(count($row) > 1)
 
 else
 {
-	$sql = "INSERT INTO Company(password, name, email, phone, website,  mission) VALUES ('$pass', '$name','$email','$phone', '$website', '$mission')";
+	$sql = "INSERT INTO Company(password, name, email, phone, website,  mission, address, industry) VALUES ('$pass', '$name','$email','$phone', '$website', '$mission', '$address', '$industry')";
 	$result = mysql_query($sql);
 	if(!$result)
 	{
@@ -48,7 +50,7 @@ else
 		exit;
 	}
 
-		$query = "SELECT id FROM Student WHERE '$email' = email";
+		$query = "SELECT id FROM Company WHERE '$email' = email";
 
 		$result = mysql_query($query);
 		$row = mysql_fetch_row($result);

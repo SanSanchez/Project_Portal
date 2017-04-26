@@ -98,7 +98,9 @@
                     <p><?php echo $row[15]?></p>
                     <p><?php echo $row[16]?></p>
 					<hr>
-					<a href="#" class="button"><span>✓</span>View Open Projects</a>
+					<?php
+                    $studID = $row[18];
+                    echo "<a href=\"project_list.php?id=$studID\"class=\"button\"><span>✓</span>View Open Projects</a>" ?>
                     <br>
                 </div>
             </div><br>
