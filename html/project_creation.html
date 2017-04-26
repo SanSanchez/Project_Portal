@@ -1,18 +1,42 @@
-<div id="form-main">
-    <div id="form-div">
-        <form id="form1" action="../php/project_creation.php" method="post">
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Project Creation</title>
+        <link rel="stylesheet" href="../css/project_creation.css">
+        <script href="../js/project_creation.js"></script>
 
-            <p class="ProjName">
-                <input name="ProjName" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Project Name" id="ProjName" />
-            </p>
+    </head>
+    <body>
+        <div id="form-main">
+            <div id="form-div">
+                <form id="form1" action="" method="post">
 
-            <p class="Description">
-                <textarea name="Description" class="validate[required,length[6,300]] feedback-input" id="Description" placeholder="Description of Project"></textarea>
-            </p>
+                    <p class="ProjName">
+                        <label class="Labels" for="ProjName">Project Name</label>
+                        <input name="ProjName" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" id="ProjName" />
+                    </p>
 
-            <div class="submit">
-                <input type="submit" value="Submit" id="SubmitButton"/>
-                <div class="ease"></div>
+                     <p class="Description">
+                         <label class="Labels" for="Description">Project Description</label>
+                        <textarea name="Description" class="validate[required,length[6,300]] feedback-input" id="Description"></textarea>
+                    </p>
+
+                        <div class="nativeDatePicker">
+                            <label for="bday">Enter your birthday:</label>
+                            <input type="date" id="bday" name="bday">
+                            <span class="validity"></span>
+                        </div>
+                        <p class="fallbackLabel">Enter Project Start Date:</p>
+                        <div class="fallbackDatePicker">
+
+                    <div class="submit">
+                        <input type="submit" value="Submit" id="SubmitButton"/>
+                        <div class="ease"></div>
+                    </div>
+                        </div>
+                </form>
             </div>
-        </form>
-    </div>
+        </div>
+    </body>
+</html>
