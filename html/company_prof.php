@@ -10,7 +10,6 @@
     if(isset($_SESSION['id']))
     {
         $id = $_SESSION['id'];
-        echo $id;
         $sql = "SELECT * FROM Company WHERE '$id' = id";
         $result = mysql_query($sql);
         if (!$result) {
@@ -52,9 +51,7 @@
             <div class="w3-white w3-text-grey w3-card-4">
                 <div class="w3-display-container">
                     <!--<img src="" style="width:100%" alt="Avatar">-->
-                    <div class="w3-display-bottomleft w3-container w3-text-blue" >
-                        <h2><?php echo $row[3]?></h2>
-                    </div>
+
                 </div>
                 <div class="w3-container">
                     <h1><i class="fa-fw w3-margin-right w3-large w3-text-teal"></i><?php echo $row[1] ?></h1>
