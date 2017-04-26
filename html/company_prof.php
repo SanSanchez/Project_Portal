@@ -57,7 +57,7 @@
                     </div>
                 </div>
                 <div class="w3-container">
-                    <h1><i class="fa-fw w3-margin-right w3-large w3-text-teal"></i>Leopard Investors Inc.</h1>
+                    <h1><i class="fa-fw w3-margin-right w3-large w3-text-teal"></i><?php echo $row[1] ?></h1>
                     <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Investment  Company</p>
                     <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>New York, New York</p>
                     <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>leopardinvestors@gmail.com</p>

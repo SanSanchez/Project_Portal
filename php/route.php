@@ -60,7 +60,7 @@
 			if($data["total"] == 1)
 			{
 				$_SESSION['result'] = $data;
-				header("Location: ../php/html/Company_Prof.php");
+				header("Location: ../html/company_prof.php");
 	    		exit;
 			}
 			else if(isset($_POST["newacct"]))
@@ -71,7 +71,6 @@
 			else
 			{
 				header("Location: ../html/companysignup.html");
-
 				exit;
 			}
 
