@@ -7,7 +7,7 @@
 	$host = 'localhost';
 	$c = new mysqli($host, $username, $password, $dbname);
 
-	
+
 	if($c->connect_error)
 	{
 		die("Connection failed " . $c->connect_error);
@@ -23,9 +23,9 @@
 		{
 
 			$user_exists = $c->query("SELECT *, COUNT(*) AS total FROM Student WHERE '$email' = email AND '$password' = password");
-			
+
 				$data = $user_exists->fetch_array(MYSQLI_ASSOC);
-			
+
 
 			if($data["total"] == 1)
 			{
@@ -43,19 +43,19 @@
 			{
 
 				header("Location: ../html/studentsignup.html");
-				
+
 				exit;
 
 			}
-				
+
 
 		}
 		else if($user_type == "business")
 		{
 			$user_exists = $c->query("SELECT *, COUNT(*) AS total FROM Company WHERE '$email' = email AND '$password' = password");
-			
+
 				$data = $user_exists->fetch_array(MYSQLI_ASSOC);
-			
+
 
 			if($data["total"] == 1)
 			{
@@ -65,13 +65,13 @@
 			}
 			else if(isset($_POST["newacct"]))
 			{
-				header("Location: ../html/Company_regForm.html");
+				header("Location: ../html/company_regform.html");
 				exit;
 			}
 			else
 			{
 				header("Location: ../html/companysignup.html");
-				
+
 				exit;
 			}
 
