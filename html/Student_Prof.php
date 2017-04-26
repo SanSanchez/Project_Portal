@@ -4,9 +4,9 @@
     $password = '';
     $dbname = 'ProjectPortal';
     $host = 'localhost';
-    $conn = mysql_connect($host, $username, $password);
+    $conn = mysql_connect($host, $username, $password); 
      mysql_select_db($dbname, $conn);
-
+    
     if(isset($_SESSION['id']))
     {
         $id = $_SESSION['id'];
@@ -28,29 +28,12 @@
         else
         {
             $set = 1;
-<<<<<<< HEAD
             $companyResult = mysql_query($sql);
            
-=======
-
-            $companyResult = mysql_query($sql);
-
-            if(!$companyResult)
-            {
-
-            }
-            else
-            {
-                //$companyRow = mysql_fetch_row($companyResult);
-
-            }
-
-
->>>>>>> 24e76847ab378ea6f56570f9064f7251f08e08fd
         }
     }
 
-
+    
 
 
 ?>
@@ -82,7 +65,7 @@
                 <div class="w3-display-container">
                     <!--<img src="" style="width:100%" alt="Avatar">-->
                     <div class="w3-display-bottomleft w3-container w3-text-black">
-
+                        
                     </div>
                 </div>
                 <div class="w3-container">
@@ -143,13 +126,13 @@
                 <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-trophy fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Projects</h2>
                 <?php
                     $count = 0;
-
+                    
                     while($row = mysql_fetch_array($projectResult))
                     {
                         $companyRow = mysql_fetch_array($companyResult);
                         echo "<div class=\"w3-container\">";
-
-                        if($set == 1)
+                        
+                        if($set == 1) 
                         {
                             $compID = $row['company_id'];
                             $sql = "SELECT name FROM Company WHERE id = '$compID'";
@@ -158,14 +141,14 @@
                             $name = $compRow['name'];
                             $projName = $row['name'];
                             $desc = $row['description'];
-                        }
+                        } 
                         else
                         {
                             $name = $projectRow;
                             $projName = $projectRow;
                             $desc =$projectRow;
                         }
-
+                        
                         echo "<h5 class=\"w3-opacity\"><b>$projName</b></h5>";
                         echo "<p>$name</p>";
                         echo "<p>$desc</p>";
@@ -173,7 +156,7 @@
                         echo "</div>";
                     }
                 ?>
-
+                
             </div>
 
 
