@@ -1,3 +1,26 @@
+<?php
+    session_start();
+    $username = 'root';
+    $password = '';
+    $dbname = 'ProjectPortal';
+    $host = 'localhost';
+    $conn = mysql_connect($host, $username, $password);
+     mysql_select_db($dbname, $conn);
+
+    if(isset($_SESSION['id']))
+    {
+        $id = $_SESSION['id'];
+        echo $id;
+        $sql = "SELECT * FROM Company WHERE '$id' = id";
+        $result = mysql_query($sql);
+        if (!$result) {
+        echo 'Could not run query: ' . mysql_error();
+        exit;
+        }
+        $row = mysql_fetch_row($result);
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,7 +53,7 @@
                 <div class="w3-display-container">
                     <!--<img src="" style="width:100%" alt="Avatar">-->
                     <div class="w3-display-bottomleft w3-container w3-text-blue" >
-                        <h2>Leopard Investors Inc.</h2>
+                        <h2><?php echo $row[3]?></h2>
                     </div>
                 </div>
                 <div class="w3-container">
