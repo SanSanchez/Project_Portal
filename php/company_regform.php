@@ -54,7 +54,7 @@ else
 		$row = mysql_fetch_row($result);
 		$_SESSION['id'] = $row[0];
 		echo $row[0];
-		header("Location: ../../html/Student_Prof.php");
+		header("Location: ../html/company_prof.php");
 
 
 }
