@@ -31,9 +31,17 @@
             $set = 1;
             $projectRow =  mysql_fetch_row($projectResult);
             $sql = "SELECT name FROM Company WHERE id = '$projectRow[2]'"
-            $companyRow = mysql_query($sql);
+            $companyResult = mysql_query($sql);
 
-            if(!)
+            if(!$companyResult)
+            {
+
+            }
+            else
+            {
+                $companyRow = mysql_fetch_row($companyResult);
+
+            }
 
             echo $set;
         }
@@ -122,7 +130,7 @@
                 <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-trophy fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Projects</h2>
                 <div class="w3-container">
                     <h5 class="w3-opacity"><b><?php if($set == 1) {echo $projectRow[3];} else{echo $projectRow;}?></b></h5>
-                    <p><?php if($set == 1) {echo $projectRow[2];} else{echo $projectRow;}?></p>
+                    <p><?php if($set == 1) {echo $companyRow[2];} else{echo $projectRow;}?></p>
                     <p><?php if($set == 1) {echo $projectRow[4];} else{echo $projectRow;}?></p>
                     <hr>
                 </div>
