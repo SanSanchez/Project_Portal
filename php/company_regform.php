@@ -32,17 +32,29 @@ $row = mysql_fetch_row($result);
 if(strcmp($pass,$confirm) !== 0)
 {
 	echo "ERROR: Passwords do not match\n";
+	header("Location: ../index.html");
+	exit;
 }
 
 //prevents duplicate users
-elseif(count($row) > 1)
+if(count($row) > 1)
 {
 	echo "ERROR: This email has already been used\n";
+	header("Location: ../index.html");
+	exit;
 }
 
-else
-{
-	$sql = "INSERT INTO Company(password, name, email, phone, website,  mission, address, industry) VALUES ('$pass', '$name','$email','$phone', '$website', '$mission', '$address', '$industry')";
+echo $email;
+echo $name;
+echo $pass;
+echo $confirm;
+echo $website;
+echo $phone;
+echo $mission;
+echo $address;
+echo $industry;
+
+	$sql = "INSERT INTO Company(password, name, email, phone, website, mission, address, industry) VALUES ('$pass', '$name','$email','$phone', '$website', '$mission', '$address', '$industry')";
 	$result = mysql_query($sql);
 	if(!$result)
 	{
@@ -59,6 +71,6 @@ else
 		header("Location: ../html/company_prof.php");
 
 
-}
+
 
 ?>

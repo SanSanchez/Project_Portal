@@ -35,13 +35,12 @@ session_start();
         <div id="List_Item">
         
         <?php 
-            $array = array();
             while($row = mysql_fetch_array($result))
             {
                 echo "<div class=\"w3-container w3-card-2 w3-white w3-margin-bottom\">";
-                $projID = $row[0];
+                $projID = $row['proj_id'];
                 $companyID = $row['company_id'];
-                array_push($array, $companyID);
+                
                 $q = "SELECT name FROM Company WHERE id = '$companyID' ";
                 $r = mysql_query($q);
                 $companyName = mysql_fetch_row($r);

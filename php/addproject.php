@@ -11,7 +11,7 @@ $conn = mysql_connect($host, $username, $password);
  $projID = $_GET['proj_id'];
  $studID = $_GET['stud_id'];
 
- $sql = "UPDATE Projects SET student_id = $studID WHERE '$projID' = proj_id";
+ $sql = "UPDATE Projects SET student_id = '$studID' WHERE '$projID' = proj_id";
  $result = mysql_query($sql);
 
  header("Location: ../../ProjectPortal/html/Student_Prof.php");
