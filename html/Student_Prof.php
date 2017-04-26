@@ -24,13 +24,11 @@
         {
             $set = 0;
             $projectRow = "No projects";
-            echo $set;
         }
         else
         {
             $set = 1;
-            $projectRow =  mysql_fetch_row($projectResult);
-            $sql = "SELECT name FROM Company WHERE id = '$projectRow[2]'";
+            
             $companyResult = mysql_query($sql);
 
             if(!$companyResult)
@@ -39,7 +37,7 @@
             }
             else
             {
-                $companyRow = mysql_fetch_row($companyResult);
+                //$companyRow = mysql_fetch_row($companyResult);
 
             }
 
@@ -133,12 +131,39 @@
 
             <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
                 <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-trophy fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Projects</h2>
-                <div class="w3-container">
-                    <h5 class="w3-opacity"><b><?php if($set == 1) {echo $projectRow[3];} else{echo $projectRow;}?></b></h5>
-                    <p><?php if($set == 1) {echo $companyRow[0];} else{echo $projectRow;}?></p>
-                    <p><?php if($set == 1) {echo $projectRow[4];} else{echo $projectRow;}?></p>
-                    <hr>
-                </div>
+                <?php
+                    $count = 0;
+                    
+                    while($row = mysql_fetch_array($projectResult))
+                    {
+                        $companyRow = mysql_fetch_array($companyResult);
+                        echo "<div class=\"w3-container\">";
+                        
+                        if($set == 1) 
+                        {
+                            $compID = $row['company_id'];
+                            $sql = "SELECT name FROM Company WHERE id = '$compID'";
+                            $companyRes = mysql_query($sql);
+                            $compRow = mysql_fetch_array($companyRes);
+                            $name = $compRow['name'];
+                            $projName = $row['name'];
+                            $desc = $row['description'];
+                        } 
+                        else
+                        {
+                            $name = $projectRow;
+                            $projName = $projectRow;
+                            $desc =$projectRow;
+                        }
+                        
+                        echo "<h5 class=\"w3-opacity\"><b>$projName</b></h5>";
+                        echo "<p>$name</p>";
+                        echo "<p>$desc</p>";
+                        echo "<hr>";
+                        echo "</div>";
+                    }
+                ?>
+                
             </div>
 
 
