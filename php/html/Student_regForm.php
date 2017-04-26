@@ -53,7 +53,7 @@ elseif(count($row) > 1)
 
 else
 {
-	$sql = "INSERT INTO Student(fname, email, password, lname,  phone, school_name, school_degree, school_start, school_end, work_name, work_title, word_description, language1, language2, language3, address) VALUES ('$fname', '$email','$pass','$lname', '$phone', '$schoolname', '$degree', '$schoolstart', '$schoolend', '$work', '$position', '$workDesc', '$lang1', '$lang2', '$lang3', '$addr')";
+	$sql = "INSERT INTO Student(fname, email, password, lname,  phone, school_name, school_degree, school_start, school_end, work_name, work_title, workstart, workend, word_description, language1, language2, language3, address) VALUES ('$fname', '$email','$pass','$lname', '$phone', '$schoolname', '$degree', '$schoolstart', '$schoolend', '$work', '$position', '$startDate', '$endDate', '$workDesc', '$lang1', '$lang2', '$lang3', '$addr')";
 	$result = mysql_query($sql);
 	if(!$result)
 	{
@@ -61,11 +61,12 @@ else
 		exit;
 	}
 	
-		$query = "SELECT fname FROM Student WHERE '$email' = email";
+		$query = "SELECT id FROM Student WHERE '$email' = email";
 
 		$result = mysql_query($query);
 		$row = mysql_fetch_row($result);
-		$_SESSION['id'] = $row[16];
+		$_SESSION['id'] = $row[0];
+		echo $row[0];
 		header("Location: ../../html/Student_Prof.php");
 		
 	

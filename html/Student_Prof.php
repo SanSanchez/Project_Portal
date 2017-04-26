@@ -10,7 +10,6 @@
     if(isset($_SESSION['id']))
     {
         $id = $_SESSION['id'];
-        echo $id;
         $sql = "SELECT * FROM Student WHERE '$id' = id";
         $result = mysql_query($sql);
         if (!$result) {
@@ -18,6 +17,26 @@
         exit;
         }
         $row = mysql_fetch_row($result);
+
+        $sql = "SELECT * FROM Projects WHERE '$id' = student_id";
+        $projectResult = mysql_query($sql);
+        if(!$projectResult)
+        {
+            $set = 0;
+            $projectRow = "No projects";
+            echo $set;
+        }
+        else
+        {
+            $set = 1;
+            $projectRow =  mysql_fetch_row($projectResult);
+            $sql = "SELECT name FROM Company WHERE id = '$projectRow[2]'"
+            $companyRow = mysql_query($sql);
+
+            if(!)
+
+            echo $set;
+        }
     }
 
     
@@ -55,20 +74,20 @@
                     </div>
                 </div>
                 <div class="w3-container">
-                    <h1><i class="fa-fw w3-margin-right w3-large w3-text-teal"></i>Adam Halfaker</h1>
-                    <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Developer</p>
-                    <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>New York, New York</p>
-                    <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>ex@mail.com</p>
-                    <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>(555) 555-5555</p>
+                    <h1><i class="fa-fw w3-margin-right w3-large w3-text-teal"></i><?php echo $row[0] . " " . $row[3];?></h1>
+                    <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i><?php echo $row[10]?></p>
+                    <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i><?php echo $row[17]?></p>
+                    <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i><?php echo $row[1]?></p>
+                    <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i><?php echo $row[4]?></p>
                     <hr>
 
                     <!--<p>Perhaps programming languages go here</p>-->
 
 
                     <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Proficient Languages</b></p>
-                    <p>C++</p>
-                    <p>Python</p>
-                    <p>Javascript</p>
+                    <p><?php echo $row[14]?></p>
+                    <p><?php echo $row[15]?></p>
+                    <p><?php echo $row[16]?></p>
                     <br>
                 </div>
             </div><br>
@@ -82,39 +101,33 @@
             <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
                 <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience</h2>
                 <div class="w3-container">
-                    <h5 class="w3-opacity"><b>Front End Developer @ "Example.com"</b></h5>
-                    <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jan 2015 - <span class="w3-tag w3-teal w3-round">Current</span></h6>
-                    <p>Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
+                    <h5 class="w3-opacity"><b><?php echo $row[9] . " " . $row[10]?></b></h5>
+                    <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i><?php echo $row[11]?> - <span class="w3-tag w3-teal w3-round"><?php echo $row[12]?></span></h6>
+                    <p><?php echo $row[13]?></p>
                     <hr>
                 </div>
-                <div class="w3-container">
-                    <h5 class="w3-opacity"><b>Web Developer @ "Created Website"</b></h5>
-                    <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Mar 2012 - Dec 2014</h6>
-                    <p>Consectetur adipisicing elit. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
-                    <hr>
                 </div>
+
+            <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
+                <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education</h2>
                 <div class="w3-container">
-                    <h5 class="w3-opacity"><b>Graphic Designer @ "Place Of Work"</b></h5>
-                    <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jun 2010 - Mar 2012</h6>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p><br>
+                    <h5 class="w3-opacity"><b><?php echo $row[5]?></b></h5>
+                    <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i><?php echo $row[7]?> - <span class="w3-tag w3-teal w3-round"><?php echo $row[8]?></span></h6>
+                    <p><?php echo $row[6]?></p>
+                    <hr>
                 </div>
             </div>
 
-            <div class="w3-container w3-card-2 w3-white">
-                <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education</h2>
+            <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
+                <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-trophy fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Projects</h2>
                 <div class="w3-container">
-                    <h5 class="w3-opacity"><b>University of Cambridge</b></h5>
-                    <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Forever</h6>
-                    <p>Bachelors of Science in Computer Science</p>
-                    <hr>
-                </div>
-                <div class="w3-container">
-                    <h5 class="w3-opacity"><b>London Business School</b></h5>
-                    <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2013 - 2015</h6>
-                    <p>Masters In Business Administration</p>
+                    <h5 class="w3-opacity"><b><?php if($set == 1) {echo $projectRow[3];} else{echo $projectRow;}?></b></h5>
+                    <p><?php if($set == 1) {echo $projectRow[2];} else{echo $projectRow;}?></p>
+                    <p><?php if($set == 1) {echo $projectRow[4];} else{echo $projectRow;}?></p>
                     <hr>
                 </div>
             </div>
+
 
             <!-- End Right Column -->
         </div>
