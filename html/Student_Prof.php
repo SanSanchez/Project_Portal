@@ -28,19 +28,7 @@
         else
         {
             $set = 1;
-            
             $companyResult = mysql_query($sql);
-
-            if(!$companyResult)
-            {
-
-            }
-            else
-            {
-                //$companyRow = mysql_fetch_row($companyResult);
-
-            }
-
            
         }
     }
@@ -84,7 +72,12 @@
                     <h1><i class="fa-fw w3-margin-right w3-large w3-text-teal"></i><?php echo $row[0] . " " . $row[3];?></h1>
                     <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i><?php echo $row[10]?></p>
                     <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i><?php echo $row[17]?></p>
-                    <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i><?php echo $row[1]?></p>
+                    
+                    <?php 
+                    $emailAddr = $row[1];
+                    ?>
+                    <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i><a href="mailto:<?php echo $emailAddr ?>"><?php echo $emailAddr ?></a></p>
+                    
                     <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i><?php echo $row[4]?></p>
                     <hr>
 
