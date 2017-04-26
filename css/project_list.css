@@ -1,0 +1,83 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+
+* {margin: 0; padding: 0;}
+
+html {
+    height: 100%;
+    background: 
+        linear-gradient(rgb(107, 122, 143), rgb(38, 41, 45));
+}
+
+body {
+    font-family: montserrat, arial, verdana, monospace;
+
+    background:
+            white; /* For browsers that do not support gradients */
+    background:
+            -webkit-linear-gradient(whitesmoke, rgb(107, 122, 143), rgb(38, 41, 45)); /* For Safari 5.1 to 6.0 */
+    background:
+            -o-linear-gradient(red, yellow); /* For Opera 11.1 to 12.0 */
+    background:
+            -moz-linear-gradient(red, yellow); /* For Firefox 3.6 to 15 */
+    background:
+            linear-gradient(red, yellow); /* Standard syntax */}
+
+
+
+H1 {
+    position: relative;
+    align-self: center;
+}
+
+.List_Item_Frame {
+    background-color: rgba(63, 63, 63, 0.4);
+    margin: 100px;
+}
+
+.List_Item {
+    position: relative;
+    align-self: center;
+}
+
+hr {
+    color: #F46242;
+    width: 50px;
+    position: relative;
+    align-self: center;
+}
+
+#ProjName {
+    width: 150px;
+    /*background: #3F3F3F;*/
+    background-color: rgba(63, 63, 63, 0.4);
+    margin: 15px auto;
+    position: relative;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+#CompName {
+    width: 150px;
+    /*background: #3F3F3F;*/
+    background-color: rgba(63, 63, 63, 0.4);
+    margin: 15px auto;
+    position: relative;
+    text-align: center;
+    color: #FFFFFF;
+
+}
+
+#Description {
+    width: 150px;
+    /*background: #3F3F3F;*/
+    background-color: rgba(63, 63, 63, 0.4);
+    margin: 15px auto;
+    position: relative;
+    text-align: center;
+    color: #FFFFFF;
+
+}
+
+#add_button {
+
+}
