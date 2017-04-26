@@ -6,7 +6,6 @@
     $host = 'localhost';
     $conn = mysql_connect($host, $username, $password);
      mysql_select_db($dbname, $conn);
-
     if(isset($_SESSION['id']))
     {
         $id = $_SESSION['id'];
@@ -17,7 +16,6 @@
         exit;
         }
         $row = mysql_fetch_row($result);
-
         $sql = "SELECT * FROM Projects WHERE '$id' = company_id";
         $projectResult = mysql_query($sql);
         if(!$projectResult)
@@ -41,17 +39,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Profile</title>
-        <html>
-        <title>Company Profile</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <style>
-            html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
-            a {color: blue;}
-        </style>
+    <title>Company Profile</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+        a {color: blue;}
+        /*.Headers {font-size: 20px; color: #5e5e5e; padding: 10px}*/
+    </style>
 
 <body class="w3-light-grey">
 <!-- Page Container -->
@@ -101,20 +99,16 @@
                 <div class="w3-container">
                     <h5 class="w3-opacity"><b>Project Title</b></h5>
                     <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Start Date <span class="w3-tag w3-teal w3-round"></span></h6>
-                    <p>Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
-                    <hr>
-                </div>
-            </div>
-            <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
-                <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Current Participants</h2>
-                <div class="w3-container">
-                    <h3>Profile</h3>
+                    <h5 class="w3-opacity" id="DescriptionHeader"><b>Description</b></h5>
+                    <p id="Description"></p>
+                    <h5 class="w3-opacity" id="ParticipantsHeader"><b>Participants</b></h5>
                     <ul>
                         <li><a href="">Little_Johny</a></li>
                     </ul>
                     <hr>
                 </div>
             </div>
+
             <!-- End Right Column -->
         </div>
 
