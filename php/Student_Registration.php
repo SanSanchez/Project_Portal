@@ -1,8 +1,8 @@
 <?php
-$servername = "dbsrv2.cs.fsu.edu";
-$username = "syed";
-$password = "wpKe*A95XT";
-$database = "halfakerdb";
+$username = 'id1475524_project';
+    $password = 'project123';
+    $dbname = 'id1475524_projectportal';
+    $host = 'localhost';
 $c = new mysqli($servername, $username, $password, $database);
 if($c->connect_error)
 {

@@ -1,9 +1,9 @@
 <?php
 session_start();
-$username = 'root';
-$password = '';
-$dbname = 'ProjectPortal';
-$host = 'localhost';
+$username = 'id1475524_project';
+    $password = 'project123';
+    $dbname = 'id1475524_projectportal';
+    $host = 'localhost';
 $conn = mysql_connect($host, $username, $password);
  mysql_select_db($dbname, $conn);
 
@@ -32,29 +32,17 @@ $row = mysql_fetch_row($result);
 if(strcmp($pass,$confirm) !== 0)
 {
 	echo "ERROR: Passwords do not match\n";
-	header("Location: ../index.html");
-	exit;
 }
 
 //prevents duplicate users
-if(count($row) > 1)
+elseif(count($row) > 1)
 {
 	echo "ERROR: This email has already been used\n";
-	header("Location: ../index.html");
-	exit;
 }
 
-echo $email;
-echo $name;
-echo $pass;
-echo $confirm;
-echo $website;
-echo $phone;
-echo $mission;
-echo $address;
-echo $industry;
-
-	$sql = "INSERT INTO Company(password, name, email, phone, website, mission, address, industry) VALUES ('$pass', '$name','$email','$phone', '$website', '$mission', '$address', '$industry')";
+else
+{
+	$sql = "INSERT INTO Company(password, name, email, phone, website,  mission, address, industry) VALUES ('$pass', '$name','$email','$phone', '$website', '$mission', '$address', '$industry')";
 	$result = mysql_query($sql);
 	if(!$result)
 	{
@@ -71,6 +59,6 @@ echo $industry;
 		header("Location: ../html/company_prof.php");
 
 
-
+}
 
 ?>

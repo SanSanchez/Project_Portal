@@ -1,8 +1,8 @@
 <?php
     session_start();
-    $username = 'root';
-    $password = '';
-    $dbname = 'ProjectPortal';
+    $username = 'id1475524_project';
+    $password = 'project123';
+    $dbname = 'id1475524_projectportal';
     $host = 'localhost';
     $conn = mysql_connect($host, $username, $password);
      mysql_select_db($dbname, $conn);
@@ -86,7 +86,7 @@
                     </div>
                     <p>Company Website</p>
                     <?php echo "<a href=https://www.google.com/#q= $row[4] > $row[4] </a>";
-                    echo "<a href=\"project_creation.php?id=$id\"class=\"button\"><span>✓</span>Create Project</a>" ?>
+                    echo "<a href=\"project_creation.php?id=$id\"class=\"button\"><span>â</span>Create Project</a>" ?>
                     <hr>
                     <br>
                 </div>

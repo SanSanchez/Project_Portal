@@ -1,10 +1,10 @@
 <?php
 	session_start();
 
-	$username = 'root';
-	$password = '';
-	$dbname = 'ProjectPortal';
-	$host = 'localhost';
+	$username = 'id1475524_project';
+    $password = 'project123';
+    $dbname = 'id1475524_projectportal';
+    $host = 'localhost';
 	$c = new mysqli($host, $username, $password, $dbname);
 
 
@@ -25,18 +25,17 @@
 			$user_exists = $c->query("SELECT *, COUNT(*) AS total FROM Student WHERE '$email' = email AND '$password' = password");
 
 				$data = $user_exists->fetch_array(MYSQLI_ASSOC);
-
-
+    
 			if($data["total"] == 1)
 			{
 				$_SESSION['id'] = $data['id'];
-
-				header("Location: ../../ProjectPortal/html/Student_Prof.php");
+                                
+				header("Location: ../html/Student_Prof.php");
 	    		exit;
 			}
 			else if(isset($_POST["newacct"]))
 			{
-				header("Location: ../html/Student_regForm.html");
+				header("Location: ../../html/Student_regForm.html");
 				exit;
 			}
 			else

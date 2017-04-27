@@ -1,8 +1,8 @@
 <?php
 session_start();
-$username = 'root';
-$password = '';
-$dbname = 'ProjectPortal';
+$username = 'id1475524_project';
+$password = 'project123';
+$dbname = 'id1475524_projectportal';
 $host = 'localhost';
 $conn = mysql_connect($host, $username, $password);
  mysql_select_db($dbname, $conn);

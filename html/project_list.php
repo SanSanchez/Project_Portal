@@ -1,8 +1,8 @@
 <?php
 session_start();
-    $username = 'root';
-    $password = '';
-    $dbname = 'ProjectPortal';
+    $username = 'id1475524_project';
+    $password = 'project123';
+    $dbname = 'id1475524_projectportal';
     $host = 'localhost';
     $conn = mysql_connect($host, $username, $password);
      mysql_select_db($dbname, $conn);
@@ -35,12 +35,13 @@ session_start();
         <div id="List_Item">
         
         <?php 
+            $array = array();
             while($row = mysql_fetch_array($result))
             {
                 echo "<div class=\"w3-container w3-card-2 w3-white w3-margin-bottom\">";
-                $projID = $row['proj_id'];
+                $projID = $row[0];
                 $companyID = $row['company_id'];
-                
+                array_push($array, $companyID);
                 $q = "SELECT name FROM Company WHERE id = '$companyID' ";
                 $r = mysql_query($q);
                 $companyName = mysql_fetch_row($r);
