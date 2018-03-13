@@ -4,9 +4,10 @@ $username = 'id1475524_project';
 $password = 'project123';
 $dbname = 'id1475524_projectportal';
 $host = 'localhost';
-$conn = mysql_connect($host, $username, $password);
- mysql_select_db($dbname, $conn);
- $id = $_GET['id'];
+mysql_connect($host, $username, $password);
+mysql_select_db($dbname, $conn);
+
+$id = $_GET['id'];
  ?>
 
 <!DOCTYPE html>

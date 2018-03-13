@@ -16,8 +16,4 @@ $conn = mysql_connect($host, $username, $password);
 
  header("Location: ../../ProjectPortal/html/Student_Prof.php");
 
-
-
-
-
 ?>
