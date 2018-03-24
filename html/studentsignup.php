@@ -1,45 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Student Sign-Up</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Student Sign-Up</title>
+    <meta charset="utf-8">
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <link rel="stylesheet" href="../css/student_signup.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <!--Jquery Library-->
+    <script src="https://cdn.jsdelivr.net/jquery/1.12.4/jquery.min.js"></script>
+    <!--Jquery Validation Plugin-->
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+    <!--Validation Script-->
+    <script src="../js/student_registration_val.js"></script>
 </head>
 
 <body>
+
 <!-- Header -->
 <?php
-    require_once 'header.php'
+require_once 'header.php'
 ?>
+<!-- End Header -->
 
 <!-- Sign-up Section -->
-<div class="login-page">
+<div class="container">
+    <h2>Registration</h2>
+    <!-- TODO: Add action to the form. -->
+    <form class="register-form" method="POST" action="" name="registration" id="signup-form">
 
-  <div class="form">
-    <form class="register-form">
-      <input type="text" placeholder="name"/>
-      <input type="password" placeholder="password"/>
-      <input type="text" placeholder="email address"/>
+        <label for="firstname">First Name</label>
+        <input type="text" name="firstname" class="input-field" id="firstname" placeholder="John"/>
 
-      <button>create</button>
+        <label for="lastname">Last Name</label>
+        <input type="text" name="lastname" class="input-field" id="lastname" placeholder="Doe"/>
+
+        <label for="password">Password</label>
+        <input type="password" name="password" class="input-field" id="password"/>
+
+        <label for="email">Email Address</label>
+        <input  type="email" name="email" class="input-field" id="email" placeholder="John@doe.com"/>
+
+        <button type="submit">Register</button>
+
     </form>
-
-    <form class="login-form" method="POST" action="../php/route.php?type=student">
-      <input type="text" name="email" placeholder="email"/>
-      <input type="password" name="password" placeholder="password"/>
-      <input type="submit" class="submit" name="login" value="Login">
-      <input type="submit" class="submit" name="newacct" value="Sign-up">
-    </form>
-
-  </div>
 </div>
 <!-- End Sign-up Section -->
 
 </body>
 </html>
-
-
-

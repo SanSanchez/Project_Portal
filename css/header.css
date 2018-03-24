@@ -1,3 +1,7 @@
-/*.navbar-header {*/
-    /*background: #333333;*/
-/*}*/
+.navbar {
+    background: #6c8ba5;
+}
+
+.navbar li, .navbar a {
+    color: #FFFFFF;
+}
